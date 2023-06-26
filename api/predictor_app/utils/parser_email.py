@@ -5,15 +5,15 @@ import ssl
 from html.parser import HTMLParser
 
 # Downlodad stopwords from nltl
+# try:
+#     _create_unverified_https_context = ssl._create_unverified_context
+# except AttributeError:
+#     pass
+# else:
+#     ssl._create_default_https_context = _create_unverified_https_context
+# nltk.download('stopwords')
 
-try:
-    _create_unverified_https_context = ssl._create_unverified_context
-except AttributeError:
-    pass
-else:
-    ssl._create_default_https_context = _create_unverified_https_context
-nltk.download('stopwords')
-
+#Define MLStripper class inheriting from HTMLParser class
 class MLStripper(HTMLParser):
     def __init__(self):
         self.reset()
@@ -27,23 +27,22 @@ class MLStripper(HTMLParser):
     def get_data(self):
         return ''.join(self.fed)
 
-
 # This function is responsible for removing the HTML tags found in the text of the email
 def strip_tags(html):
     s = MLStripper()
     s.feed(html)
     return s.get_data()
 
+#Define Parser class
 class Parser:
     def __init__(self):
         self.stemmer = nltk.PorterStemmer()
         self.stopwords = set(nltk.corpus.stopwords.words('english'))
         self.punctuation = list(string.punctuation)
 
-    def parse(self, email_path):
+    def parse(self, email_content):
         """Parse an email."""
-        with open(email_path, errors='ignore') as e:
-            msg = email.message_from_file(e)
+        msg = email.message_from_string(email_content)
         return None if not msg else self.get_email_content(msg)
 
     def get_email_content(self, msg):
