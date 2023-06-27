@@ -35,7 +35,7 @@ const MenuItems = () => {
           variant="text"
           className="flex items-center gap-3 text-base font-normal tracking-normal uppercase text-white"
         >
-          More products{" "}
+          More services{" "}
           <ChevronDownIcon
             strokeWidth={2.5}
             className={`h-3.5 w-3.5 transition-transform ${
