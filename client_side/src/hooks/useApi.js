@@ -4,9 +4,9 @@ import axios from "axios";
 
 const useApi = () => {
   const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const [error, setError] = useState(null);
 
   const fetchData = async (url, method, body = null) => {
     setLoading(true);
@@ -19,11 +19,10 @@ const useApi = () => {
         url,
         data: body,
       });
-
       setData(response.data);
     } catch (error) {
-      setIsError(true);
       setError(error.response.data);
+      setIsError(true);
     }
 
     setLoading(false);

@@ -8,10 +8,10 @@ import Title from "../../components/Title";
 import TextArea from "../../components/TextArea";
 import DialogModal from "../../components/DialogModal";
 
-import { API_URL } from "../../utils/UtilitiesConts";
+import { API_URL, ERROR } from "../../utils/UtilitiesConts";
 
 const Home = () => {
-  const { loading, isError, data, post } = useApi();
+  const { loading, isError, data, error, post } = useApi();
 
   const [postData, setPostData] = useState({ email: "" });
   const [openModal, setOpenModal] = useState(false);
@@ -23,6 +23,7 @@ const Home = () => {
   const handleSubmit = async () => {
     await post(`${API_URL}/spam-detector/`, postData);
     setOpenModal(true);
+    console.log(postData)
   };
 
   return (
@@ -30,11 +31,19 @@ const Home = () => {
       {openModal && (
         <DialogModal
           handleOpen={handleOpenModal}
-          error={isError}
-          value={data}
+          isError={isError}
+          error={
+            error && error.error == ERROR
+              ? "Incomplete Email"
+              : "Submission Error!"
+          }
+          response={data && data.prediction}
         />
       )}
-      <Title title={"Introduce a email for make predictions"} className={"mt-20"} />
+      <Title
+        title={"Introduce a email for make predictions"}
+        className={"mt-20"}
+      />
       <div className="w-full flex justify-center my-8">
         <TextArea
           value={postData}
