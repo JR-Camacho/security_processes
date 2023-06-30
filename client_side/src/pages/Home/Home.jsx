@@ -5,7 +5,7 @@ import useApi from "../../hooks/useApi";
 import MainLayout from "../../layouts/MainLayout";
 
 import Title from "../../components/Title";
-import TextArea from "../../components/TextArea";
+import FormFields from "../../components/FormFields";
 import DialogModal from "../../components/DialogModal";
 
 import { API_URL, ERROR } from "../../utils/UtilitiesConts";
@@ -13,7 +13,8 @@ import { API_URL, ERROR } from "../../utils/UtilitiesConts";
 const Home = () => {
   const { loading, isError, data, error, post } = useApi();
 
-  const [postData, setPostData] = useState({ email: "" });
+  const [textEmail, setTextEmail] = useState({ email_text: "" });
+  const [fileEmail, setFileEmail] = useState({ email_file: null });
   const [openModal, setOpenModal] = useState(false);
 
   const handleOpenModal = () => {
@@ -21,9 +22,13 @@ const Home = () => {
   };
 
   const handleSubmit = async () => {
-    await post(`${API_URL}/spam-detector/`, postData);
+    const formData = new FormData();
+    formData.append("email_file", fileEmail.email_file);
+    await post(
+      `${API_URL}/spam-detector/`,
+      fileEmail.email_file ? formData : textEmail
+    );
     setOpenModal(true);
-    console.log(postData)
   };
 
   return (
@@ -45,13 +50,15 @@ const Home = () => {
         className={"mt-20"}
       />
       <div className="w-full flex justify-center my-8">
-        <TextArea
-          value={postData}
-          name={"email"}
-          setValue={setPostData}
+        <FormFields
+          textName={"email_text"}
+          fileName={"email_file"}
           placeholder={"Email content"}
-          handleClick={handleSubmit}
           loading={loading}
+          textValue={textEmail}
+          setTextValue={setTextEmail}
+          setFileValue={setFileEmail}
+          handleClick={handleSubmit}
         />
       </div>
     </MainLayout>

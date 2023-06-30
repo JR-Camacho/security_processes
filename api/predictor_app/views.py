@@ -9,7 +9,7 @@ from .services.make_prediction import make_email_prediction
 class SpamDetectorViewSet(viewsets.ViewSet):
 
     def create(self, request):
-        email_text = request.data.get("email")
+        email_text = request.data.get("email_text")
         email_file = request.FILES.get("email_file")
 
         if email_file:
