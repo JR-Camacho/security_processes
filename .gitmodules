@@ -1,3 +1,6 @@
 [submodule "api_security_processes"]
 	path = api_security_processes
 	url = git@github.com:JR-Camacho/api_security_processes.git
+[submodule "client_side_security_processes"]
+	path = client_side_security_processes
+	url = git@github.com:JR-Camacho/client_side_security_processes.git
