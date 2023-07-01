@@ -50,20 +50,20 @@ To use the Spam Detection App, follow these steps:
 
 3. On the home page, you will find an input field where you can enter the email content.
 
-4. Enter the email in the following format: "From: Subject". Alternatively, you can upload a plain text document (.txt) or an email file (.eml) downloaded from an email provider like Gmail. 
+4. Enter the email in the following format: "From: Subject". Alternatively (recomented), you can upload a plain text document (.txt) or an email file (.eml) downloaded from an email provider like Gmail. 
 
 Example: 
  ```shell
-   From: john.doe@example.com
-   To: jane.smith@example.com
-   Subject: Regarding the meeting
+From: john.doe@example.com
+To: jane.smith@example.com
+Subject: Regarding the meeting
 
 
-   Hi Jane, I hope you're doing well. I wanted to discuss the details of our upcoming meeting scheduled for next week. Let's connect soon to go over the agenda and finalize the arrangements.
+Hi Jane, I hope you're doing well. I wanted to discuss the details of our upcoming meeting scheduled for next week. Let's connect soon to go over the agenda and finalize the arrangements.
 
    
-   Best regards,
-   John
+Best regards,
+John
    ```
 
 5. Click the "Analize" button or press the enter key to initiate the spam detection classification.
