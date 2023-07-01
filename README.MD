@@ -39,6 +39,41 @@ To download the Security Processes project, follow these steps:
 
    You will find the ML, API, and client_side modules in the respective directories.
 
+## Usage
+
+To use the Spam Detection App, follow these steps:
+
+1. Open the app in a web browser.
+    ```shell
+   https://spamdetectorapp.netlify.app/
+   ```
+
+3. On the home page, you will find an input field where you can enter the email content.
+
+4. Enter the email in the following format: "From: Subject". Alternatively, you can upload a plain text document (.txt) or an email file (.eml) downloaded from an email provider like Gmail. 
+
+Example: 
+ ```shell
+   From: john.doe@example.com
+   To: jane.smith@example.com
+   Subject: Regarding the meeting
+
+
+   Hi Jane, I hope you're doing well. I wanted to discuss the details of our upcoming meeting scheduled for next week. Let's connect soon to go over the agenda and finalize the arrangements.
+
+   
+   Best regards,
+   John
+   ```
+
+5. Click the "Analize" button or press the enter key to initiate the spam detection classification.
+
+6. The application will process the input email and provide the corresponding prediction results.
+
+7. Review the output displayed on the screen to determine whether the email is classified as spam.
+
+8. You can repeat the process by entering additional emails.
+
 ## Contact
 
 If you have any questions or suggestions regarding the Security Processes project, feel free to contact us:
