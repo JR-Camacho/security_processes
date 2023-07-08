@@ -1,7 +1,4 @@
-/data/processed/kdd
-/data/processed/mails
-/data/raw/NSL-KDD
-/data/raw/trec07p
+/data/processed
+/data/raw
+/models/android_malware/random_forest
 /venv
-
-
