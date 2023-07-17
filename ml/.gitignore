@@ -1,4 +1,5 @@
 /data/processed
 /data/raw
 /models/android_malware/random_forest
+/models/malicius_url/spam/random_forest
 /venv
