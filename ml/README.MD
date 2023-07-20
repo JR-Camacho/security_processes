@@ -8,6 +8,18 @@ This module is responsible for training models, visualizing data, processing, an
 - Virtual environment (virtualenv)
 - Required packages (see `requirements.txt`)
 
+## Dataset
+
+For the training and evaluation of the models, we used the following datasets:
+
+   1. **Dataset for SPAM Email Detection:**
+      - Link: [SPAM Email Dataset](https://plg.uwaterloo.ca/cgi-bin/cgiwrap/gvcormac/foo07)
+      - Description: This dataset contains labeled email samples, including spam and non-spam (ham), which were used to train our spam detection model. It plays a crucial role in building a robust classifier to identify and filter out unwanted emails.
+
+   2. **Dataset for Malicious URLs Detection:**
+      - Link: [Malicious URLs Dataset](https://www.unb.ca/cic/datasets/url-2016.html)
+      - Description: This dataset comprises URLs labeled as malicious or benign, which were employed to train our model for detecting malicious URLs. It helps us enhance the security of web applications and networks by identifying potentially harmful links.
+
 ## Installation
 
 1. Clone the Security Process repository:
