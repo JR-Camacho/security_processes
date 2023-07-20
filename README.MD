@@ -45,7 +45,7 @@ To use the Spam Detection App, follow these steps:
 
 1. Open the app in a web browser.
     ```shell
-   https://spamdetectorapp.netlify.app/
+   https://jota-security.netlify.app/
    ```
 
 3. On the home page, you will find an input field where you can enter the email content.
